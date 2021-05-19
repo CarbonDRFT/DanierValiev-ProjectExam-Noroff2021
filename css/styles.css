@@ -35,7 +35,7 @@ nav {
 .navbar__logo {
   color: var(--black);
   justify-self: start;
-  margin-left: 2rem;
+  margin-left: 30%;
   cursor: pointer;
   font-size: 3rem;
 }
