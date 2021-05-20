@@ -1,0 +1,53 @@
+.about__header {
+  background: url(/img/miriam-espacio-H_a57GKWIMI-unsplash.jpg);
+  width: 100%;
+  height: 30rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+}
+
+.background__overlay {
+  background: rgb(255, 255, 255, 0.4);
+  width: 100%;
+  height: 100%;
+}
+
+.about__header :is(h1) {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 10%;
+}
+
+.about__section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.about__section :is(h2) {
+  flex-basis: 100%;
+  font-size: 3rem;
+  width: 100%;
+  margin: 2rem 0;
+}
+.about__section :is(p) {
+  font-size: 2rem;
+  flex-basis: 60%;
+  margin-right: 2rem;
+}
+
+.about__img {
+  background: url(/img/robert-collins-lP_FbBkMn1c-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-basis: 35%;
+  background-position: center;
+  background-position-x: 50%;
+  width: 30%;
+  height: 30rem;
+  margin-bottom: 4rem;
+}
