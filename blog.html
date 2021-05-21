@@ -7,6 +7,15 @@
       integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
       crossorigin="anonymous"
     />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-FH1YMKSEC2");
+    </script>
 
     <link rel="stylesheet" href="/css/main.css" />
     <meta charset="UTF-8" />
@@ -35,20 +44,17 @@
       </div>
     </nav>
     <main>
-      <div class="header__homepage">
-        <div class="header__homepage--overlay"></div>
-        <h1 class="header__title">Title</h1>
-        <div class="header__animated--text">
-          <h2>Let Us Save Our Planet</h2>
-          <h2>Think Green</h2>
-          <h2>Earth Is Our Only Home</h2>
-        </div>
-        <p class="header__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
-          incidunt quibusdam dolore omnis numquam amet eius quod autem eum
-          architecto!
-        </p>
-        <div class="header__donate--btn">DONATE</div>
+      <div class="alert"></div>
+      <h1 class="blogList__heading">Explore our posts</h1>
+      <div class="loading hide">
+        <img
+          src="https://flevix.com/wp-content/uploads/2019/07/Ajax-Preloader.gif"
+          alt="Loading Gif"
+        />
+      </div>
+      <div class="blogList__section"></div>
+      <div class="viewMoreDiv">
+        <button id="viewMoreBtn">View More</button>
       </div>
     </main>
     <footer>
@@ -66,8 +72,10 @@
         </ul>
         <p>&copy; 2021 EcoLove DanierValiev</p>
       </div>
-
+      <script src="/js/loading.js"></script>
       <script src="/js/script.js"></script>
+      <script src="/js/blogs.js"></script>
+      <script src="/js/alert.js"></script>
     </footer>
   </body>
 </html>
