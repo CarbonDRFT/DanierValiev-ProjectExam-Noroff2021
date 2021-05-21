@@ -101,6 +101,7 @@ nav {
     left: -100%;
     opacity: 0;
     transition: all 0.5s ease;
+    z-index: 2;
   }
 
   .navbar__logo {
@@ -120,6 +121,7 @@ nav {
     line-height: 6rem;
     width: 100%;
     display: table;
+    z-index: 2;
   }
 
   .nav__links:hover {
@@ -146,6 +148,7 @@ nav {
     border-radius: 0;
     background-color: var(--white);
     color: var(--maincolor);
+    border: 0.2rem solid var(--maincolor);
   }
 
   #mobile__menu {

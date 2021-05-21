@@ -1,3 +1,10 @@
+:root {
+  --maincolor: #379267;
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #9b9b9b;
+}
+
 .about__header {
   background: url(/img/miriam-espacio-H_a57GKWIMI-unsplash.jpg);
   width: 100%;
@@ -14,9 +21,9 @@
 }
 
 .about__header :is(h1) {
-  position: absolute;
+  position: relative;
   font-size: 4rem;
-  top: 50%;
+  top: -6rem;
   left: 10%;
 }
 
@@ -50,4 +57,158 @@
   width: 30%;
   height: 30rem;
   margin-bottom: 4rem;
+}
+
+.employee__section {
+  width: 80%;
+  margin: auto;
+}
+
+.employee__heading {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+  margin-bottom: 5rem;
+  text-align: center;
+  position: relative;
+}
+
+.employee__heading::after {
+  content: "";
+  width: 10rem;
+  height: 0.8rem;
+  background-color: var(--maincolor);
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+}
+
+.card__wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.card {
+  width: max(23rem, 20%);
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+  border: 0.2rem solid var(--maincolor);
+  border-radius: 1rem;
+}
+
+.card__img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+}
+
+.profile__img {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -7rem;
+  z-index: 3;
+  border: 0.3rem solid var(--maincolor);
+}
+
+.card h4 {
+  font-size: 2rem;
+  color: var(--black);
+  margin: 1.5rem 0;
+}
+
+.job__title {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.employee__about {
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.employee__btn {
+  padding: 0.8rem 3.5rem;
+  background-color: var(--maincolor);
+  color: var(--white);
+  border-radius: 2rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+
+.employee__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  background-color: #09be6a;
+}
+
+.employee__btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@media screen and (min-width: 800px) {
+  .card__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    margin: 2rem 1.5rem;
+    transition: transform 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .card:nth-child(1) {
+    animation: fadeIn 0.5s 0.5s backwards;
+  }
+  .card:nth-child(2) {
+    animation: fadeIn 0.5s 1s backwards;
+  }
+  .card:nth-child(3) {
+    animation: fadeIn 0.5s 1.5s backwards;
+  }
+  .card:nth-child(4) {
+    animation: fadeIn 0.5s 2s backwards;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about__section :is(p, .about__img) {
+    flex-basis: 100%;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 }
