@@ -12,7 +12,7 @@ async function getPosts(postsUrl) {
     for (let i = 0; i < postsResults.length; i++) {
       document.querySelector(".blogList__section").innerHTML += `
       <div class="card__containerBlog">
-      <a href="blog.html?id=${postsResults[i].id}">
+      <a href="blogpage.html?id=${postsResults.id}">
         <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].media_details.sizes["1536x1536"].source_url}"/>
       </a>
         <h3 class="cardTitleBlog">${postsResults[i].title.rendered}</h3>
