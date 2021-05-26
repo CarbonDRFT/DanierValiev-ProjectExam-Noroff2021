@@ -16,6 +16,8 @@ async function getPosts(postsUrl) {
         <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].media_details.sizes["1536x1536"].source_url}"/>
       </a>
         <h3 class="cardTitleBlog">${postsResults[i].title.rendered}</h3>
+        <p class="blogg__date">${postsResults[i].date}</p>
+        <p class="blogg__description">${postsResults[i].excerpt.rendered}</p>
         </div>`;
 
       if (i === 9) {

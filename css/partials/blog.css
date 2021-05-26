@@ -1,9 +1,15 @@
+:root {
+  --maincolor: #379267;
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #9b9b9b;
+}
+
 .hide {
   display: none;
 }
 
 .blogList__heading {
-  grid-area: blogList__heading;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,13 +17,12 @@
 }
 
 .blogList__section {
-  grid-area: blogList__section;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin: 2rem auto;
+  width: 80%;
 }
 
 .card__containerBlog {
@@ -26,6 +31,13 @@
   align-items: center;
   justify-content: center;
   width: 33%;
+  margin: 2rem;
+  border: 0.1rem solid rgb(231, 231, 231);
+  border-radius: 2rem;
+  height: 40rem;
+  max-height: auto;
+  background-color: rgb(231, 231, 231);
+  box-shadow: 0.1rem 0.2rem 2rem rgb(0, 0, 0, 0.5);
 }
 
 .card__containerBlog a {
@@ -36,17 +48,19 @@
 }
 
 .cardBlog {
-  border: solid 2px black;
-  border-radius: 10px;
-  height: 240px;
-  width: 85%;
-  margin: 10px;
-  box-shadow: 2px 2px lightgray;
+  height: 25rem;
+  width: 100%;
   display: flex;
-  -webkit-box-shadow: 0 0 5px var(--secondaryBlack);
-  box-shadow: 0 0 5px var(--secondaryBlack);
   background-size: cover;
   background-position: center;
+  border-radius: 2rem 2rem 0 0;
+  margin-bottom: 1rem;
+}
+
+.card__containerBlog p {
+  width: 80%;
+  color: black;
+  margin: 0.5rem 0;
 }
 
 .cardTitleBlog {
@@ -63,16 +77,13 @@
 }
 
 #viewMoreBtn {
-  width: 200px;
+  width: 15rem;
   height: 45px;
   font-family: "Jost", sans-serif;
   font-size: 1.3rem;
-  background-color: var(--white);
-  color: var(--mainBlack);
-  border: solid 2px var(--mainBlack);
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 3px var(--secondaryBlack);
-  box-shadow: 0 0 3px var(--secondaryBlack);
+  padding: 1.5rem 3rem;
+  background-color: var(--maincolor);
+  color: var(--white);
   cursor: pointer;
 }
 
