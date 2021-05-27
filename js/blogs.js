@@ -7,16 +7,17 @@ async function getPosts(postsUrl) {
     const postsResults = jsonFromServer;
     console.log(postsResults);
 
-    document.querySelector(".loading").classList.add("hide");
+    document.querySelector(".loader").classList.add("hide");
 
     for (let i = 0; i < postsResults.length; i++) {
       document.querySelector(".blogList__section").innerHTML += `
       <div class="card__containerBlog">
       <a href="blogpage.html?id=${postsResults.id}">
-        <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].media_details.sizes["1536x1536"].source_url}"/>
+        <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].source_url}"/>
       </a>
         <h3 class="cardTitleBlog">${postsResults[i].title.rendered}</h3>
         <p class="blogg__date">${postsResults[i].date}</p>
+        <p class="blogg__author"${postsResults[i]._embedded["author"].name}</p>
         <p class="blogg__description">${postsResults[i].excerpt.rendered}</p>
         </div>`;
 
@@ -43,10 +44,8 @@ const viewMoreDiv = document.querySelector(".viewMoreDiv");
 
 viewMoreBtn.onclick = function () {
   getPosts(postsUrl + "&page=2");
-  viewMoreDiv.innerHTML = ` <div class="loading">
-  <img
-      src="https://flevix.com/wp-content/uploads/2019/07/Ajax-Preloader.gif"
-      alt="Loading Gif"/>
+  viewMoreDiv.innerHTML = ` <div class="loader hidden">
+  <img src="/img/loader.gif" alt="Loading..." />
 </div>`;
   setTimeout(function () {
     viewMoreDiv.innerHTML = ``;
