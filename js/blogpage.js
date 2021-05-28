@@ -27,7 +27,7 @@ getBlog(id);
 
 function getCard(result) {
   let title = result.title.rendered;
-  document.title = title + ` - Postal Fitness`;
+  document.title = title;
 
   document
     .querySelector('meta[name="description"]')

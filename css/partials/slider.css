@@ -1,0 +1,83 @@
+.featured {
+  margin-top: 50px;
+  background-color: var(--background-color);
+  height: 350px;
+}
+
+.featured__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.h2 {
+  font-family: "URW";
+  font-size: 30px;
+  font-weight: 100;
+  padding: 25px 15px;
+}
+
+/* Slider */
+
+#wrapper {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  padding: 0 15px;
+}
+
+#carousel {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: var(--main-color);
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 280px;
+  height: 180px;
+  background: transparent;
+  object-fit: cover;
+}
+
+.card-text {
+  text-decoration: none;
+  color: black;
+}
