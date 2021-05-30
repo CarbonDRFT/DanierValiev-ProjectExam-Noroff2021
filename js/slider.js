@@ -1,7 +1,7 @@
 async function getPosts() {
   try {
     const repsonse = await fetch(
-      "http://tilici.com/wp-json/wp/v2/posts?_embed"
+      "https://pensive-golick-bcccac.netlify.app/http://tilici.com/wp-json/wp/v2/posts?_embed"
     );
     const result = await repsonse.json();
 
@@ -19,7 +19,7 @@ async function getPosts() {
               </div>
               `;
     }
-    /* ---------------------------------------- Carousel slider --------------------------------------------- */
+    /* ---Carousel slider --- */
     $("#slider").slick({
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -49,28 +49,12 @@ async function getPosts() {
       ],
     });
 
-    var filtered = false;
-
-    $(".js-filter").on("click", function () {
-      if (filtered === false) {
-        $(".filtering").slick("slickFilter", ":even");
-        $(this).text("Unfilter Slides");
-        filtered = true;
-      } else {
-        $(".filtering").slick("slickUnfilter");
-        $(this).text("Filter Slides");
-        filtered = false;
-      }
-    });
-    /* ---------------------------------------- Carousel slider -------------------------------------------- */
-
-    /* ---------------------------------------- HideLoader -------------------------------------------- */
     const loaderContent = document.querySelector(".loader");
 
     setTimeout(function () {
       loaderContent.style.display = "none";
     });
-    /* ---------------------------------------- /HideLoader ------------------------------------------- */
+    /* ---/HideLoader --- */
   } catch (error) {
     document.querySelector(".alert").innerHTML += thisIsAnAlert(
       "An error has occured",

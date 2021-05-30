@@ -11,7 +11,10 @@ const main = document.querySelector("main");
 
 async function getId(id) {
   try {
-    const response = await fetch("http://tilici.com/wp-json/wp/v2/posts" + id);
+    const response = await fetch(
+      "https://pensive-golick-bcccac.netlify.app/http://tilici.com/wp-json/wp/v2/posts" +
+        id
+    );
     const jsonResults = await response.json();
     console.log(jsonResults);
 
