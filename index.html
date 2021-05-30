@@ -3,7 +3,7 @@
   <head>
     <!-- Hotjar Tracking Code for https://pensive-golick-bcccac.netlify.app/ -->
     <script src="/js/hotjar.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
     <link
       rel="stylesheet"
@@ -71,10 +71,26 @@
         </button>
       </div>
 
-      <section class="featured">
-        <div class="featured__container">
-          <div id="wrapper">
-            <div id="carousel"></div>
+      <section class="latest__blogs">
+        <h2 class="lates__header--header">Latest blogs</h2>
+        <div class="slider__container">
+  
+          <div
+            class="
+              slider
+              carousel
+              slick-initialized slick-slider
+              multiple-items
+              slick-initialized slick-slider slick-dotted
+            "
+            id="slider"
+          >
+          <span class="prev_arrow"><i class="fas fa-angle-left"></i></span></i
+        ></span>
+            <div id="slick-list draggable">
+              <div id="slick-track"></div>
+            </div>
+            <span class="next_arrow"><i class="fas fa-angle-right"></i></span>
           </div>
         </div>
       </section>
@@ -96,8 +112,18 @@
       </div>
 
       <script src="/js/script.js"></script>
+      <script src="/js/slick.min.js"></script>
+
+      <script
+        type="text/javascript"
+        src="//code.jquery.com/jquery-1.11.0.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+      ></script>
+      <script type="text/javascript" src="/js/slick.min.js"></script>
       <script src="/js/slider.js"></script>
-      <script src="/js/blogs.js"></script>
       <script src="/js/coin.js"></script>
     </footer>
   </body>

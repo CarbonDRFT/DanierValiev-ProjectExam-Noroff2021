@@ -18,6 +18,11 @@ html {
   font-size: 62.5%;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .loader {
   position: fixed;
   z-index: 99;

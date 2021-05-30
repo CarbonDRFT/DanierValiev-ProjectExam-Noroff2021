@@ -1,38 +1,43 @@
-const postsAPI = "http://tilici.com/wp-json/wp/v2/posts/";
+const postsUrl = "http://tilici.com/wp-json/wp/v2/posts?_embed";
 
-const getposts = async (url) => {
+async function getPosts(postsUrl) {
   try {
-    const repsonse = await fetch(url);
-    const posts = await repsonse.json();
-    console.log(posts);
+    const repsonse = await fetch(postsUrl);
+    const jsonFromServer = await repsonse.json();
+    const postsResults = jsonFromServer;
+    console.log(postsResults);
 
     document.querySelector(".loader").classList.add("hide");
 
-    posts.forEach((element) => {
+    for (let i = 0; i < postsResults.length; i++) {
       document.querySelector(".blogList__section").innerHTML += `
       <div class="card__containerBlog">
-      <a href="blogpage.html?id=${element.id}">
-        <img class="cardBlog" src="${element.better_featured_image.source_url}">
+      <a href="blogpage.html?id=${postsResults.id}">
+        <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].source_url}"/>
       </a>
-        <h3 class="cardTitleBlog">${element.title.rendered}</h3>
-        <p class="blogg__date">${element.date}</p>
-        <p class="blogg__author"${element._embedded["author"].name}</p>
-        <p class="blogg__description">${element.excerpt.rendered}</p>
+        <h3 class="cardTitleBlog">${postsResults[i].title.rendered}</h3>
+        <p class="blogg__date">${postsResults[i].date}</p>
+        <p class="blogg__author"${postsResults[i]._embedded["author"].name}</p>
+        <p class="blogg__description">${postsResults[i].excerpt.rendered}</p>
         </div>`;
-    });
+
+      if (i === 9) {
+        break;
+      }
+    }
   } catch (error) {
     document.querySelector(".alert").innerHTML = showAlertTouser(
       "An error occured (Cannot load content)",
       "error"
     );
-    console.log(error);
   } finally {
     setTimeout(function () {
       document.querySelector(".alert").innerHTML = "";
     }, 3000);
   }
-};
-getposts(postsAPI);
+}
+
+getPosts(postsUrl);
 
 const viewMoreBtn = document.getElementById("viewMoreBtn");
 const viewMoreDiv = document.querySelector(".viewMoreDiv");
