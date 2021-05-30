@@ -60,7 +60,7 @@ async function getId(id) {
   } finally {
     setTimeout(function () {
       document.querySelector(".alert").innerHTML = "";
-    }, 4000);
+    }, 3000);
   }
 }
 

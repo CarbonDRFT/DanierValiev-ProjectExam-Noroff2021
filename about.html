@@ -23,7 +23,7 @@
     </div>
     <nav>
       <div class="navbar">
-        <h1 class="navbar__logo">EcoLove</h1>
+        <a href="/index.html" class="navbar__logo">EcoLove</a>
         <div class="menu__toggle" id="mobile__menu">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -34,15 +34,22 @@
           <li><a href="/about.html" class="nav__links">About</a></li>
           <li><a href="/blog.html" class="nav__links">Blog</a></li>
           <li><a href="/contact.html" class="nav__links">Contact</a></li>
-          <li>
-            <a href="#" class="nav__links nav__links--donateBtn">Donate</a>
+          <li class="donation__link">
+            <button class="tip-button">
+              <span class="tip-button__text">Donate</span>
+              <div class="coin-wrapper">
+                <div class="coin">
+                  <div class="coin__middle"></div>
+                  <div class="coin__back"></div>
+                  <div class="coin__front"></div>
+                </div>
+              </div>
+            </button>
           </li>
-        </ul>
-      </div>
     </nav>
     <main>
       <div class="about__header">
-        <div class="background__overlay"></div>
+        <div class="background__overlay" alt="About us" title="About us"></div>
         <h1>About Us</h1>
       </div>
 
@@ -56,23 +63,25 @@
           praesentium. Id officia ratione, reiciendis itaque eum ut deleniti
           dignissimos sapiente!
         </p>
-        <div class="about__img"></div>
+        <div class="about__img" alt="smiling kids" title="smiling kids"></div>
       </div>
 
       <div class="employee__section">
         <div class="employee__container">
           <h3 class="employee__heading">Meet The Team</h3>
           <div class="card__wrapper">
-            <div class="card">
+            <div class="card" title="Employee">
               <img
                 src="/img/chinh-le-duc-poK5c-QWy1E-unsplash.jpg"
                 alt="card background"
                 class="card__img"
+                title="profile picture"
               />
               <img
                 src="/img/employee-1.jpg"
                 alt="profile image"
                 class="profile__img"
+                title="profile picture"
               />
               <h4>Michael Lopes</h4>
               <p class="job__title">Blogger</p>
@@ -83,11 +92,12 @@
               <a href="#" class="employee__btn">View</a>
             </div>
 
-            <div class="card">
+            <div class="card" title="Employee">
               <img
                 src="/img/chinh-le-duc-poK5c-QWy1E-unsplash.jpg"
                 alt="card background"
                 class="card__img"
+                title="profile picture"
               />
               <img
                 src="/img/Employee-2.jpg"
@@ -103,7 +113,7 @@
               <a href="#" class="employee__btn">View</a>
             </div>
 
-            <div class="card">
+            <div class="card" title="Employee">
               <img
                 src="/img/chinh-le-duc-poK5c-QWy1E-unsplash.jpg"
                 alt="card background"
@@ -113,6 +123,7 @@
                 src="/img/Employee-3.jpg"
                 alt="profile image"
                 class="profile__img"
+                title="profile picture"
               />
               <h4>Michille Gomes</h4>
               <p class="job__title">Blogger</p>
@@ -123,7 +134,7 @@
               <a href="#" class="employee__btn">View</a>
             </div>
 
-            <div class="card">
+            <div class="card" title="Employee">
               <img
                 src="/img/chinh-le-duc-poK5c-QWy1E-unsplash.jpg"
                 alt="card background"
@@ -149,10 +160,10 @@
     <footer>
       <div class="footer__container">
         <ul class="footer__nav">
-          <li><a href="#" class="footer__nav--list">Home</a></li>
-          <li><a href="#" class="footer__nav--list">About</a></li>
-          <li><a href="#" class="footer__nav--list">Blog</a></li>
-          <li><a href="#" class="footer__nav--list">Contact</a></li>
+          <li><a href="/index.html" class="footer__nav--list">Home</a></li>
+          <li><a href="/about.html" class="footer__nav--list">About</a></li>
+          <li><a href="/blog.html" class="footer__nav--list">Blog</a></li>
+          <li><a href="/contact.html" class="footer__nav--list">Contact</a></li>
         </ul>
         <ul class="footer__socials">
           <li><i class="fab fa-facebook-f"></i></li>

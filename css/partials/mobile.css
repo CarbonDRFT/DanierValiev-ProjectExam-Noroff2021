@@ -4,13 +4,19 @@
   }
 
   .header__animated--text {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
+    width: 65%;
   }
 
   .header__description {
     font-size: 1.4rem;
+    margin: 0.5rem 0;
   }
   .header__homepage {
     background-position-x: 75%;
+  }
+
+  .footer__container {
+    width: 100%;
   }
 }

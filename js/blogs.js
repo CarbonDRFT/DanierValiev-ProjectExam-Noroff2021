@@ -14,11 +14,10 @@ async function getPosts(postsUrl) {
       <div class="card__containerBlog">
       <a href="blogpage.html?id=${postsResults.id}">
         <img class="cardBlog" src="${postsResults[i]._embedded["wp:featuredmedia"]["0"].source_url}"/>
-      </a>
         <h3 class="cardTitleBlog">${postsResults[i].title.rendered}</h3>
-        <p class="blogg__date">${postsResults[i].date}</p>
         <p class="blogg__author"${postsResults[i]._embedded["author"].name}</p>
         <p class="blogg__description">${postsResults[i].excerpt.rendered}</p>
+        <div class="readMore__btn">Read more</div></a>
         </div>`;
 
       if (i === 9) {

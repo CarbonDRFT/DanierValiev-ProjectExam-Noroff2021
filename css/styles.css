@@ -23,6 +23,10 @@ a {
   color: #000;
 }
 
+main {
+  width: max(37.5rem, 100%);
+}
+
 .loader {
   position: fixed;
   z-index: 99;
@@ -73,6 +77,8 @@ nav {
   margin-left: 30%;
   cursor: pointer;
   font-size: 3rem;
+  width: 30rem;
+  font-weight: 700;
 }
 
 .nav__menu {
@@ -82,7 +88,7 @@ nav {
   text-align: center;
   width: 70%;
   justify-self: end;
-  width: max(40rem, 60%);
+  width: max(37.5rem, 100%);
 }
 
 .nav__links {
@@ -104,13 +110,12 @@ nav {
   font-size: 2.4rem;
 }
 
-.nav__links--donateBtn:hover {
-  background-color: transparent;
-  color: var(--maincolor);
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.4rem;
-  border: solid 0.1rem var(--maincolor);
-  transition: all 0.3s ease-out;
+.nav__menu:is(.tip-button) {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .menu__toggle .bar {
@@ -124,15 +129,15 @@ nav {
 @media screen and (max-width: 768px) {
   nav {
     position: relative;
-    width: max(40rem, 100%);
+    width: max(37.5rem, 100%);
   }
 
   .nav__menu {
     display: grid;
     grid-template-columns: auto;
-    background: rgb(155, 155, 155, 0.4);
+    background: rgba(255, 255, 255);
     margin: 0;
-    width: max(40rem, 100%);
+    width: max(37.5rem, 100%);
     position: absolute;
     top: 8rem;
     left: -100%;
@@ -146,7 +151,7 @@ nav {
   }
 
   .nav__menu.active {
-    background: rgb(155, 155, 155, 0.4);
+    background: rgba(255, 255, 255);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -170,6 +175,22 @@ nav {
   .navbar {
     width: 100%;
   }
+
+  .nav__menu:is(.tip-button) {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .donation__link {
+    height: 6rem;
+    align-content: center;
+    margin: auto;
+    padding-bottom: 3rem;
+  }
+
   .nav__links--donateBtn {
     border: none;
     padding: 0;

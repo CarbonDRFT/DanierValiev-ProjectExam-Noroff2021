@@ -104,7 +104,7 @@
   z-index: 2;
 }
 .tip-button::after {
-  bottom: -1rem;
+  bottom: -0.4rem;
   color: var(--maincolor);
   content: "Thank you for your donation!";
   height: 110%;
@@ -117,7 +117,7 @@
   transform-origin: 50% 20%;
   transition: transform 200ms cubic-bezier(0, 0, 0.35, 1.43);
   width: 100%;
-  z-index: 1;
+  z-index: 6;
 }
 
 .coin-wrapper {

@@ -7,7 +7,7 @@
   color: white;
   padding: 40px;
   text-align: center;
-  width: max(40rem, 100%);
+  width: max(37.5rem, 100%);
 }
 
 .contact-banner :is(h1) {
@@ -21,7 +21,7 @@
 }
 
 .contact__form {
-  width: max(40rem, 60%);
+  width: max(30rem, 60%);
   margin: 4rem auto;
 }
 

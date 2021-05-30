@@ -30,11 +30,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 33%;
+  width: max(30rem, 35%);
+  max-width: 50rem;
   margin: 2rem;
-  border: 0.1rem solid rgb(231, 231, 231);
   border-radius: 2rem;
-  height: 40rem;
+  height: 45rem;
   max-height: auto;
   background-color: rgb(231, 231, 231);
   box-shadow: 0.1rem 0.2rem 2rem rgb(0, 0, 0, 0.5);
@@ -48,6 +48,8 @@
 }
 
 .cardBlog {
+  position: relative;
+  top: -3rem;
   height: 25rem;
   width: 100%;
   display: flex;
@@ -55,17 +57,20 @@
   background-position: center;
   border-radius: 2rem 2rem 0 0;
   margin-bottom: 1rem;
+  margin: 0rem;
 }
 
 .card__containerBlog p {
   width: 80%;
   color: black;
-  margin: 0.5rem 0;
 }
 
 .cardTitleBlog {
   color: var(--mainBlack);
   font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .viewMoreDiv {
@@ -79,12 +84,13 @@
 #viewMoreBtn {
   width: 15rem;
   height: 45px;
-  font-family: "Jost", sans-serif;
   font-size: 1.3rem;
   padding: 1.5rem 3rem;
   background-color: var(--maincolor);
   color: var(--white);
   cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
 }
 
 #viewMoreBtn:hover {
@@ -106,21 +112,4 @@
 .loading img {
   width: 400px;
   height: 320px;
-}
-
-@media (max-width: 1024px) {
-  .card__containerBlog {
-    width: 40%;
-  }
-}
-
-@media (max-width: 769px) {
-  .cardBlog {
-    width: 75%;
-    height: 180px;
-  }
-
-  .cardTitleBlog {
-    font-size: 1rem;
-  }
 }
