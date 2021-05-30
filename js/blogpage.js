@@ -1,68 +1,67 @@
 const queryString = document.location.search;
+console.log(queryString);
+
 const params = new URLSearchParams(queryString);
+console.log(params);
+
 const id = params.get("id");
+console.log(id);
 
-const blogContentTop = document.querySelector(".blogFillerTop");
-const blogContentBot = document.querySelector(".blogFillerBot");
-const loading = document.querySelector(".loading");
-const alert = document.querySelector(".alert");
+const main = document.querySelector("main");
 
-async function getBlog(blogID) {
+async function getId(id) {
   try {
-    const response = await fetch(
-      "http://tilici.com/wp-json/wp/v2/posts?_embed" + blogID
-    );
-    const result = await response.json();
-    getCard(result);
+    const response = await fetch("http://tilici.com/wp-json/wp/v2/posts" + id);
+    const jsonResults = await response.json();
+    console.log(jsonResults);
+
+    main.innerHTML += `
+            
+                ${jsonResults.content.rendered}
+            
+        `;
+
+    // console.log(document.querySelector('.portrait'))
+    let backgroundImage = document.querySelector(".portrait");
+    backgroundImage.style.backgroundImage = `url('${jsonResults.better_featured_image.source_url}')`;
+
+    const openImg = document.querySelector(".gallery__cover");
+    const modalContainer = document.querySelector(".modal__container");
+
+    openImg.onclick = function (e) {
+      e.preventDefault();
+      console.log(e.target);
+      modalContainer.classList.remove("hide");
+
+      targetImg = e.target.getAttribute("src");
+      targetAlt = e.target.getAttribute("alt");
+      console.log(targetImg);
+
+      modalContainer.innerHTML = `
+            <div class="modal__windows">            
+                <i class="fas fa-times modal__close"></i>           
+                <img class="modal__img" src="${targetImg}" />
+                <h2 class="modal__h2">${jsonResults.title.rendered}</h2>
+            </div>
+        `;
+      let modalClose = document.querySelector(".modal__close");
+
+      modalClose.onclick = function (e) {
+        console.log(modalClose);
+        modalContainer.classList.add("hide");
+      };
+    };
   } catch (error) {
+    document.querySelector(".alert").innerHTML = showAlertTouser(
+      "An error occured. We are working to fix it as soon as possible",
+      "danger"
+    );
     console.log(error);
-    alert.innerHTML = showAlertTouser(`Couldn't find blog`, "danger");
   } finally {
     setTimeout(function () {
-      alert.innerHTML = "";
-    }, 3000);
+      document.querySelector(".alert").innerHTML = "";
+    }, 4000);
   }
 }
-getBlog(id);
 
-function getCard(result) {
-  let title = result.title.rendered;
-  document.title = title;
-
-  document
-    .querySelector('meta[name="description"]')
-    .setAttribute(
-      "content",
-      `This blogpage on postalfitness is about ${title}`
-    );
-
-  blogContentTop.innerHTML = `
-  <div class="blogContent__header">
-      <h1>${result.title.rendered}</h1>
-      <div>Date | Author | Comments (0)</div>
-  </div>
-      <div class="blogContent__upper">
-        ${result.content.rendered}
-      </div>
-  </div>
-  `;
-
-  blogContentBot.innerHTML = `
-  <h2 class="blogContent__bottom--header">2nd tittel</h2>
-  <div class="blogContent__bottom--text">${result.excerpt.rendered}</div>
-  `;
-
-  getImages(result);
-}
-
-function getImages(result) {
-  document.querySelector(
-    ".heroBlog"
-  ).style.backgroundImage = `url(${result.better_featured_image.source_url})`;
-  document.querySelector(
-    ".blogImg"
-  ).style.backgroundImage = `url(${result.better_featured_image.source_url})`;
-  document.querySelector(
-    ".modalImgBig"
-  ).innerHTML = `<img class="modalImgImg" src="${result.better_featured_image.source_url}" alt=""></img>`;
-}
+getId(id);

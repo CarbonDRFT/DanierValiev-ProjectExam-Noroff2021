@@ -1,0 +1,16 @@
+@media screen and (max-width: 480px) {
+  .header__title {
+    font-size: 4rem;
+  }
+
+  .header__animated--text {
+    font-size: 1.7rem;
+  }
+
+  .header__description {
+    font-size: 1.4rem;
+  }
+  .header__homepage {
+    background-position-x: 75%;
+  }
+}

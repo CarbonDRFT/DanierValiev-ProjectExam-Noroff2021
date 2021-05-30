@@ -1,77 +1,77 @@
-// Button
-const submitCta = document.querySelector(".submit__cta");
+const form = document.querySelector(".contact__form");
+const errorName = document.querySelector(".error__name");
+const errorEmail = document.querySelector(".error__email");
+const errorSubject = document.querySelector(".error__subject");
+const errorMessage = document.querySelector(".error__message");
+const submitContact = document.querySelector(".submit__contact");
 
-// All error messages
-const nameError = document.querySelector(".nameError");
-const emailError = document.querySelector(".emailError");
-const subjectError = document.querySelector(".subjectError");
-const messageError = document.querySelector(".messageError");
+submitContact.onclick = function (e) {
+  e.preventDefault();
 
-submitCta.onclick = (event) => {
-  try {
-    event.preventDefault();
+  const name = document.querySelector(".fullname").value.trim();
+  const email = document.querySelector(".email").value.trim();
+  const subject = document.querySelector(".subject").value.trim();
+  const message = document.querySelector(".message").value.trim();
 
-    // All inputs
-    const name = document.querySelector("#name").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const subject = document.querySelector("#subject").value.trim();
-    const message = document.querySelector("#message").value.trim();
+  //Validations
 
-    if (formLength(name, 5)) {
-      nameError.classList.add("hide");
-      nameError.classList.remove("show");
-    } else {
-      nameError.classList.add("show");
-      nameError.classList.remove("hide");
-    }
+  let nameValidation = true;
+  let emailValidation = true;
+  let subjectValidation = true;
+  let messageValidation = true;
 
-    if (validateEmail(email)) {
-      emailError.classList.add("hide");
-      emailError.classList.remove("show");
-    } else {
-      emailError.classList.add("show");
-      emailError.classList.remove("hide");
-    }
+  if (name.length < 6) {
+    errorName.classList.add("show");
+    nameValidation = false;
+  } else {
+    errorName.classList.remove("show");
+  }
 
-    if (formLength(subject, 15)) {
-      subjectError.classList.add("hide");
-      subjectError.classList.remove("show");
-    } else {
-      subjectError.classList.add("show");
-      subjectError.classList.remove("hide");
-    }
+  //validate email
 
-    if (formLength(message, 25)) {
-      messageError.classList.add("hide");
-      messageError.classList.remove("show");
-    } else {
-      messageError.classList.add("show");
-      messageError.classList.remove("hide");
-    }
+  if (validateEmail(email) === false) {
+    errorEmail.classList.add("show");
+    emailValidation = false;
+  } else {
+    errorEmail.classList.remove("show");
+  }
 
-    function validateEmail(email) {
-      const emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      const isEmailValid = emailExpression.test(email);
-      return isEmailValid;
-    }
+  function validateEmail(emailToAdd) {
+    const emailExpression =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const isEmailValid = emailExpression.test(emailToAdd);
 
-    function formLength(element, length) {
-      if (element.length > length) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  } catch (error) {
-    document.querySelector(".alert").innerHTML = showAlert(
-      "An error occured, please contact The Modern Apartment",
-      "danger"
-    );
+    return isEmailValid;
+  }
 
-    console.log(error);
-  } finally {
-    setTimeout(function () {
-      document.querySelector(".alert").innerHTML = "";
-    }, 3000);
+  //validate subject
+
+  if (subject.length < 16) {
+    errorSubject.classList.add("show");
+    subjectValidation = false;
+  } else {
+    errorSubject.classList.remove("show");
+  }
+
+  //textbox validation
+
+  if (message.length < 26) {
+    errorMessage.classList.add("show");
+    messageValidation = false;
+  } else {
+    errorMessage.classList.remove("show");
+  }
+
+  if (
+    nameValidation &&
+    emailValidation &&
+    subjectValidation &&
+    messageValidation
+  ) {
+    let data = new FormData(form);
+    console.log(data.get("name"));
+    console.log(data.get("email"));
+    console.log(data.get("subject"));
+    console.log(data.get("message"));
   }
 };
